@@ -1,31 +1,31 @@
 - name: configure mysql server
   hosts: mysql
   become: yes
-  tasks:
-  - name: Install MySQL libraries
-    ansible.builtin.pip:
-      name: PyMySQL
-      executable: pip3.9
+  # tasks:
+  # - name: Install MySQL libraries
+  #   ansible.builtin.pip:
+  #     name: PyMySQL
+  #     executable: pip3.9
       
-  - name: Installl MySQL server
-    ansible.builtin.package:
-      name: mysql-server
-      state: installed
+  # - name: Installl MySQL server
+  #   ansible.builtin.package:
+  #     name: mysql-server
+  #     state: installed
 
-  - name: start and enable mysql server
-    ansible.builtin.service:
-      name: mysqld
-      state: started
-      enabled: yes
+  # - name: start and enable mysql server
+  #   ansible.builtin.service:
+  #     name: mysqld
+  #     state: started
+  #     enabled: yes
 
-  - name: connect to mysql server
-    community.mysql.mysql_info:
-      login_user: "{{ root }}"
-      login_password: "{{ ExpenseApp@1 }}"
-      login_host: "{{ mysql.telugustreetbyte.online }}"
-      register: mysql_info
+  # - name: connect to mysql server
+  #   community.mysql.mysql_info:
+  #     login_user: "{{ root }}"
+  #     login_password: "{{ ExpenseApp@1 }}"
+  #     login_host: "{{ mysql.telugustreetbyte.online }}"
+  #     register: mysql_info
   
-  - name: print the output
-    ansible.builtin.debug:
-      msg: "MySQL info: {{ mysql_info }} "
+  # - name: print the output
+  #   ansible.builtin.debug:
+  #     msg: "MySQL info: {{ mysql_info }} "
       

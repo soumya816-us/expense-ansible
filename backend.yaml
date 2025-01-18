@@ -13,7 +13,7 @@
       name: "{{ item }}"
       state: present
     loop:
-    - node js
+    - nodejs
     - mysql
 
   - name: create expense user
